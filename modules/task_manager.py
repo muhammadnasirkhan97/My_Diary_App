@@ -118,6 +118,7 @@ def show_task_manager():
             conn.commit()
             conn.close()  # Close Connection
             st.success("✅ Task Added Successfully!")
+            st.session_state["task_input"] = ""
             st.rerun()
         else:
             st.warning("⚠ Task cannot be empty!")
