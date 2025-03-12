@@ -78,6 +78,13 @@ if auth_option == "📝 Sign Up":
                 cursor.execute("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", (name, email, password))
                 conn.commit()
                 st.success("✅ Account Created! Please Login.")
+                # ✅ Clear Input Fields
+                st.session_state["signup_name"] = ""
+                st.session_state["signup_email"] = ""
+                st.session_state["signup_password"] = ""
+
+                st.rerun()  # Refresh the page to reflect the cleared fields
+                
             except sqlite3.IntegrityError:
                 st.warning("⚠ Email already exists! Please login.")
         else:
