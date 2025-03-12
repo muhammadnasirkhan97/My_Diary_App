@@ -51,10 +51,10 @@ if st.session_state.logged_in:
     elif page == "📝 Task Manager":
         task_manager.show_task_manager()
 
-    st.sidebar.button("🚪 Logout", on_click=lambda: (st.session_state.update(logged_in=False), 
-    st.experimental_rerun()))
     # st.sidebar.button("🚪 Logout", on_click=lambda: (st.session_state.update(logged_in=False), 
-    # st.rerun()))
+    # st.experimental_rerun()))
+    st.sidebar.button("🚪 Logout", on_click=lambda: (st.session_state.update(logged_in=False), 
+    st.rerun()))
     st.stop()  # ✅ Prevents showing login form after logout
 
 # --- Login & Signup UI ---
